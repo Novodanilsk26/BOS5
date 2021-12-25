@@ -1,0 +1,11 @@
+.:
+total 4
+drw-rwxr-x. 2 doniil doniil 22 Dec 25 12:02 dir
+-rw-r-----. 1 root   doniil  5 Dec 25 11:58 file
+-rw-------. 1 doniil doniil  0 Dec 25 12:12 file1
+-rw-rw-rw-. 1 doniil doniil  0 Dec 25 12:18 file2
+-rw-rw-rw-. 1 doniil donill  0 Dec 25 12:28 log.txt
+
+./dir:
+total 0
+-????????? ? ? ? ?            ? new_file
