@@ -1,0 +1,71 @@
+   5   ps xaf
+   6   ps xawf -eo pid,user,cgroup,args
+   7   systemd-cgls
+   8   ls -l /usr/lib/systemd/system/
+   9   ls -l /run/systemd/system/
+  10   ls -l /etc/systemd/system/
+  11   systemctl -t help
+  12   systemctl status
+  13   systemctl --type=service
+  14   systemctl --type=target
+  15   systemctl status auditd.service
+  16   systemctl is-active auditd.service
+  17   systemctl is-enabled auditd.service
+  18   systemctl list-dependencies --after auditd.service
+  19   systemctl list-dependencies --before auditd.service
+  20   systemctl list-units --type=service
+  22   systemctl list-units --type=service --all
+  23   systemctl list-units --type=socket --all
+  24   systemctl list-unit-files --type=service
+  25   systemctl --failed --type=service
+  26   systemctl status httpd.service
+  27   systemctl start httpd.service
+  28   systemctl status httpd.service
+  29   systemctl restart httpd.service
+  30   systemctl status httpd.service
+  31   systemctl stop httpd.service
+  32   systemctl enable httpd.service
+  33   systemctl status httpd.service
+  34   systemctl start httpd.service
+  35   systemctl status httpd.service
+  36   systemctl disable httpd.service
+  37   systemctl mask httpd.service
+  38   systemctl status httpd.service
+  39   systemctl start httpd.service
+  40   systemctl unmask httpd.service
+  41   systemctl list-units --type=target
+  42   systemctl list-units --type=target --all
+  43   systemctl get-default
+  44   ls -l /etc/systemd/system/default.target
+  45   systemctl set-default multi-user.target
+  46   systemctl isolate multi-user.target
+  47   systemctl --no-wall rescue
+  48   systemctl --no-wall emergency
+  49   systemctl poweroff
+  50   systemctl halt
+  51   systemctl --no-wall poweroff shutdown --poweroff 17:20
+  52   shutdown --halt +1
+  53   shutdown -c
+  54   systemctl --no-wall reboot
+  55   systemctl suspend
+  56   systemctl hibernate
+  57   hostnamectl
+  58   timedatectl
+  59   localectl
+  60   loginctl
+  61   loginctl session-status 2
+  62   loginctl show-user user1
+  63   nano mephi.service
+  64   cat mephi.service
+  65   ls -lZ mephi.service
+  66  journalctl -b
+  67  ausearch -c 'systemd' --raw | audit2allow -M my-systemd
+  68  semodule -X 300 -i my-systemd.pp
+  69  ausearch -m avc -ts recent
+  70  systemctl start mephi.service
+  71  journalctl -u mephi.service
+  72  nano mephi.path
+  73  cat mephi.path
+  74  systemctl enable mephi.path
+  75  systemctl start mephi.path
+  76  touch /tmp/mephi.file
